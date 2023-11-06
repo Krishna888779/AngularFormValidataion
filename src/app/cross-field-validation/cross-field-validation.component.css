@@ -1,0 +1,40 @@
+/* Apply styles to the entire form */
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    max-width: 300px;
+  }
+  
+  /* Apply styles to the form controls */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="password"],
+  form input[type="number"] {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  /* Apply styles to the submit button */
+  form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Apply styles to the submit button on hover */
+  form button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

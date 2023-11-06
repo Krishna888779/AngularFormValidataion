@@ -1,0 +1,46 @@
+<form [formGroup]="myforms" (ngSubmit)="OnSumbit()">
+    Name: <input type="text" formControlName="name">
+    <div *ngIf="names.invalid && (names.dirty || names.touched || myforms.submitted)">
+        <div *ngIf="names.errors?.['required']">Name is required</div>
+        <div *ngIf="names.errors?.['minlength']">Name is to short</div>
+    </div>
+    Email:<input type="email" formControlName="email">
+    <div *ngIf="emails.invalid && (emails.dirty || emails.touched||myforms.submitted)">
+      <div *ngIf="emails.errors?.['required']">Email is required</div>
+      <div *ngIf="emails.errors?.['pattern']">Email is invalid</div>
+    </div>
+    Mobile<input type="tel" formControlName="mobile">
+    <div *ngIf="mobiles.invalid && (mobiles.dirty || mobiles.touched || myforms.submitted)">
+        <div *ngIf="mobiles.errors?.['required']">Mobile is required</div>
+        <div *ngIf="mobiles.errors?.['minlength']">mobile is less than 10</div>
+        <div *ngIf="mobiles.errors?.['maxlength']">mobile is more than 10 or some space added</div>
+        <div *ngIf="mobiles.errors?.['pattern']">Mobile number is invalid</div>
+    </div>
+    Age :<input type="text" formControlName="age">
+    <div *ngIf="ages.invalid && (ages.dirty || ages.touched|| myforms.submitted)">
+        <div *ngIf="ages.errors?.['required']">age is required</div>
+        <div *ngIf="ages.errors?.['min']">Age is not less than 10</div>
+        <div *ngIf="ages.errors?.['max']">Age is not more than 50</div>
+    </div>
+    Password :<input type="password" formControlName="password">
+    <div *ngIf="passwords.invalid && (passwords.dirty && passwords.touched)">
+     <div *ngIf="passwords.errors?.['errors?']">Password is required</div>
+     <div *ngIf="passwords.errors?.['minlength']">Password is sort</div>
+     <div *ngIf="passwords.errors?.['maxlength']">Password is long</div>
+    </div>
+    Confirm Password: <input type="password" formControlName="confirmpassword">
+    <div *ngIf="confirmpasswords.invalid && (confirmpasswords.touched || confirmpasswords.dirty || myforms.submitted)">
+    <div *ngIf="passwords.errors?.['errors?']">Password is required</div>
+    <div *ngIf="myforms.errors?.['passwordMismatch']">Password does not match</div>
+    </div>
+
+    <button type="submit">Sumbit</button>
+</form> 
+
+<p>Name : {{Name}}</p>
+<p>Email : {{Email}}</p>
+<p>Mobile : {{Mobile}}</p>
+<p>Age : {{Age}}</p>
+<p>Password : {{Password}}</p>
+<p>Confirm Password :{{ConfirmPassword}}</p>
+
