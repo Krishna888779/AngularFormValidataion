@@ -16,7 +16,7 @@
  mobile <input type="tel" formControlName="mobile">
  <div *ngIf="mobileValidation.invalid && (mobileValidation.dirty || mobileValidation.touched || forms.submitted)">
  <div *ngIf="mobileValidation.errors?.['required']">Mobile number is required</div>
- <div *ngIf="mobileValidation.errors?.['minlength']">Mobile is less than ten</div>
+ <div *ngIf="mobileValidation.errors?.['minlength']">Mobile is less than 10</div>
  <div *ngIf="mobileValidation.errors?.['pattern']">Mobile number is invalid </div>
  <div *ngIf="mobileValidation.errors?.['maxlength']">Mobile number is more than 10</div>
 </div>
