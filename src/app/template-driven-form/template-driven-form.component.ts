@@ -25,7 +25,7 @@ export class TemplateDrivenFormComponent {
    debugger
     }
   else{
-    alert("please fill all field")
+    alert("please fill all the  field")
   }
   
   
