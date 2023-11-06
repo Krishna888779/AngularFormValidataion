@@ -8,7 +8,7 @@
  <div *ngIf="nameValidation.invalid && (nameValidation.dirty || nameValidation.touched  || forms.submitted)">
   <div *ngIf="nameValidation.errors?.['required']">Name is required</div>
  </div>
- Email:<input type="email" formControlName="email"><br>
+ Email:<input type="email" formControlName="email" [ngClass]="{'ng-valid':emailValidation.valid}"><br>
  <div *ngIf="emailValidation.invalid && (emailValidation.dirty || emailValidation.touched  || forms.submitted)">
   <div *ngIf="emailValidation.errors?.['required']">Email is required</div>
   <div *ngIf="emailValidation.errors?.['pattern']">Email is invalid</div>
