@@ -1,1 +1,24 @@
-<p>template-driven-form works!</p>
+<form   (ngSubmit)="OnSumbit(myForm)" #myForm="ngForm" >
+    Name:<input type="text" id="name" #name1="ngModel" name="name"
+     [(ngModel)]="names" appForbiddenName="Bob" required minlength="4" class="inputs"> <br>
+    <div *ngIf="name1.invalid && (name1.dirty || name1.touched|| myForm.submitted)" >
+       <div *ngIf="name1.errors?.['required']">Name is required</div>
+       <div *ngIf="name1.errors?.['minlength']">The Name of minmum lenght is 4</div>
+       <div *ngIf="name1.errors?.['ForbiddenName']">You can give name for Bob</div>
+    </div>
+    Email:<input type="email" id="email" #emails="ngModel" [(ngModel)]="email" name="email" 
+     required  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="inputs"/>
+     <div *ngIf="emails.invalid && (emails.touched || emails.dirty ||myForm.submitted)">
+     <div *ngIf="emails.errors?.['required']">Email is required</div>
+     <div *ngIf="emails.errors?.['pattern']">Invalid email</div>
+     </div>
+     Mobile: <input type="tel" id="mobile" name="mobile" #mobiles="ngModel" [(ngModel)]="mobile" required
+      minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" class="inputs">
+     <div *ngIf="mobiles.invalid && (mobiles.dirty || mobiles.touched ||myForm.submitted)">
+       <div *ngIf="mobiles.errors?.['required']">Mobile number is required</div>
+       <div *ngIf="mobiles.errors?.['maxlength']"> More than 10 number</div>
+       <div *ngIf="mobiles.errors?.['minlength']">less than 10 number</div>
+       <div *ngIf="mobiles.errors?.['pattern']">Invalid mobile number</div>
+     </div>
+     <button  type="submit">Sumbit</button> <button (click)="reset(myForm)">Reset</button>
+</form>

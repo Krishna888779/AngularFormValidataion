@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -6,34 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent {
+ forms:any
+Name:any
+Email:any
+Mobile:any
+//  email:any="krishna@gmail.com"
+//  names=new FormControl('krishna mohan')
+ ngOnInit(){
+  debugger
+    this.forms=new FormGroup({
+      name:new FormControl("Please enter your name",[Validators.required,Validators.minLength(4)]),
+      email:new FormControl("Please enter your email",[Validators.required,Validators.email,Validators.pattern("[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}]")]),
+      mobile: new FormControl("Please enter your mobile",[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern("[6-9]{1}[0-9]{9}")]),
+    })
 
-  names:any 
-  email:any
-  mobile:any
-  
-  ngOnInit()
-  {
-    
-  }
+ }
 
-  OnSumbit(forms:any){
-
-    if(forms.valid){
-   this.names=forms.value.name
-   this.email=forms.value.email
-   this.mobile=forms.value.mobile
-   alert("form summited")
-   debugger
-    }
-  else{
-    alert("please fill all field")
-  }
-  
-  
-  }
-
-  reset(form:any)
-  {
-    form.reset()
-  }
+ OnSumbit(){
+  debugger
+  this.forms
+  this.Name=this.forms.value.name
+  this.Email=this.forms.value.email
+  this.Mobile=this.forms.value.mobile
+ }
 }
