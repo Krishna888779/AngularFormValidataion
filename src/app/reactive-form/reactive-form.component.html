@@ -5,14 +5,22 @@
   </div>-->
 <form [formGroup]="forms" (ngSubmit)="OnSumbit()">
  Name:<input type="text" formControlName="name" ><br>
+ <div *ngIf="nameValidation.invalid && (nameValidation.dirty || nameValidation.touched)">
+  <div *ngIf="nameValidation.error?.['required']">Name is required</div>
+ </div>
  Email:<input type="email" formControlName="email"><br>
+ <div *ngIf="emailValidation.invalid && (emailValidation.dirty || emailValidation.touched)">
+  <div *ngIf="emailValidation.error?.['required']">Email is required</div>
+  <div *ngIf="emailValidation.error?.['pattern']">Email is invalid</div>
+ </div>
  mobile <input type="tel" formControlName="mobile">
+ <div></div>
  <button [disabled]="!forms.valid" type="submit">Sumbit</button>
 </form>
 
 <p>Name:{{Name}}</p>
 <p>Email:{{Email}}</p>
-<p>Mobile:{{Mobile}}</p>
+<p>Mobile:{{Mobile}} </p>
 <!--Forms typically contain several related controls. Reactive forms provide two ways of grouping multiple related controls into a single input form.-->
 
 <!-- Name: <input type="text" [formControl]="names">

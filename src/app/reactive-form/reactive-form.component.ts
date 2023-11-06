@@ -21,9 +21,10 @@ Mobile:any
       email:new FormControl("Please enter your email",[Validators.required,Validators.email,Validators.pattern("[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}]")]),
       mobile: new FormControl("Please enter your mobile",[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern("[6-9]{1}[0-9]{9}")]),
     })
-
  }
-
+ get nameValidation(){return this.forms.get('name')}
+ get emailValidation(){return this.forms.get('email')}
+ get mobileValidation(){return this.forms.get('mobile')}
  OnSumbit(){
   debugger
   this.forms
