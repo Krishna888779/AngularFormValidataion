@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
+import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 
 @Component({

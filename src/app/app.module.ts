@@ -6,12 +6,22 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrossFieldValidationComponent } from './cross-field-validation/cross-field-validation.component';
+import { DynamicFormsComponent } from './DynamicForm/dynamic-forms/dynamic-forms.component';
+import { QuestionTextboxTsComponent } from './DynamicForm/question-textbox.ts/question-textbox.ts.component';
+import { QuestionDropdwonComponent } from './DynamicForm/question-dropdwon/question-dropdwon.component';
+import { CompletDynamicFormComponent } from './DynamicForm/complet-dynamic-form/complet-dynamic-form.component';
+import { ShowDynamicFormComponent } from './DynamicForm/show-dynamic-form/show-dynamic-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
-    CrossFieldValidationComponent
+    CrossFieldValidationComponent,
+    DynamicFormsComponent,
+    QuestionTextboxTsComponent,
+    QuestionDropdwonComponent,
+    CompletDynamicFormComponent,
+    ShowDynamicFormComponent
   ],
   imports: [
     BrowserModule,
