@@ -6,19 +6,19 @@
 <form [formGroup]="forms" (ngSubmit)="OnSumbit()">
  Name:<input type="text" formControlName="name" ><br>
  <div *ngIf="nameValidation.invalid && (nameValidation.dirty || nameValidation.touched  || forms.submitted)">
-  <div *ngIf="nameValidation.errors?.['required']">Name is required</div>
+  <div class="a" *ngIf="nameValidation.errors?.['required']">Name is required</div>
  </div>
  Email:<input type="email" formControlName="email" [ngClass]="{'ng-valid':emailValidation.valid}"><br>
  <div *ngIf="emailValidation.invalid && (emailValidation.dirty || emailValidation.touched  || forms.submitted)">
-  <div *ngIf="emailValidation.errors?.['required']">Email is required</div>
-  <div *ngIf="emailValidation.errors?.['pattern']">Email is invalid</div>
+  <div class="a" *ngIf="emailValidation.errors?.['required']">Email is required</div>
+  <div class="a" *ngIf="emailValidation.errors?.['pattern']">Email is invalid</div>
  </div>
  mobile <input type="tel" formControlName="mobile">
  <div *ngIf="mobileValidation.invalid && (mobileValidation.dirty || mobileValidation.touched || forms.submitted)">
- <div *ngIf="mobileValidation.errors?.['required']">Mobile number is required</div>
- <div *ngIf="mobileValidation.errors?.['minlength']">Mobile is less than 10</div>
- <div *ngIf="mobileValidation.errors?.['pattern']">Mobile number is invalid </div>
- <div *ngIf="mobileValidation.errors?.['maxlength']">Mobile number is more than 10</div>
+ <div class="a" *ngIf="mobileValidation.errors?.['required']">Mobile number is required</div>
+ <div class="a" *ngIf="mobileValidation.errors?.['minlength']">Mobile is less than 10</div>
+ <div class="a" *ngIf="mobileValidation.errors?.['pattern']">Mobile number is invalid </div>
+ <div class="a" *ngIf="mobileValidation.errors?.['maxlength']">Mobile number is more than 10</div>
 </div>
  <button [disabled]="!forms.valid " type="submit">Sumbit</button>
 </form>
